@@ -1,0 +1,17 @@
+{
+	"styles": [
+		"node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
+		"node_modules/@fortawesome/fontawesome-free/scss/brands.scss",
+		"node_modules/@fortawesome/fontawesome-free/scss/regular.scss",
+		"node_modules/@fortawesome/fontawesome-free/scss/solid.scss",
+		"bower_components/mdi/css/materialdesignicons.min.css",
+		"node_modules/mdbootstrap/css/bootstrap.min.css",
+		"node_modules/mdbootstrap/scss/mdb.scss"
+	],
+	"scripts":[
+		"bower_components/jquery/dist/jquery.min.js",
+		"node_modules/mdbootstrap/js/popper.min.js",
+		"node_modules/mdbootstrap/js/bootstrap.min.js",
+		"node_modules/mdbootstrap/js/mdb.min.js"
+	]
+}

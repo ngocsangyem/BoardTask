@@ -1,0 +1,58 @@
+
+@function rem($size)
+	$remSize: $size / 14px
+	@return #{$remSize}rem
+=flex-center()
+	display: flex
+	justify-content: center
+	align-items: center
+///////////////////////////////////
+/////////// Media ////////////////
+/////////////////////////////////
+=mq($media)
+	@if $media == xs
+		@media screen and (max-width: 480px) // Small devices (tablets, 768px and up)
+			@content
+	@if $media == sm
+		@media screen and (min-width: 481px) and (max-width: 767px) // Medium and small devices (tablets,phone 481px and 767px)
+			@content
+	@else if $media == md
+		@media screen and (min-width: 768px) // Medium devices (tablets, 768px and up)
+			@content
+	@else if $media == lg
+		@media screen and (min-width: 992px)  // Large devices (desktops, 992px and up)
+			@content
+	@else if $media == xl
+		@media screen and (min-width: 1200px) // Extra large devices (large desktops, 1200px and up)
+			@content
+	@else if $media == down-xs
+		@media screen and (max-width: 575.98px) // Extra small devices (portrait phones, less than 576px)
+			@content
+	@else if $media == down-sm
+		@media screen and (max-width: 767.98px) // Small devices (landscape phones, less than 768px)
+			@content
+	@else if $media == down-md
+		@media screen and (max-width: 991.98px) // Medium devices (tablets, less than 992px)
+			@content
+	@else if $media == down-lg
+		@media screen and (max-width: 1199.98px) // Large devices (desktops, less than 1200px)
+			@content
+	@else if $media == only-sm
+		@media only screen and (min-width: 576px) and (max-width: 767.98px)
+			@content
+	@else if $media == only-md
+		@media only screen and (min-width: 768px) and (max-width: 991.98px)
+			@content
+	@else if $media == only-lg
+		@media only screen and (min-width: 992px) and (max-width: 1199.98px)
+			@content
+	@else if $media == non-retina
+		@media screen and (-webkit-max-device-pixel-ratio: 1)
+			@content
+
+	@else if $media == retina
+		@media screen and (-webkit-min-device-pixel-ratio: 2)
+			@content
+	@else
+		@media only screen and (max-width: #{$media}px)
+			@content

@@ -1,0 +1,223 @@
+.board__control
+	a
+		&:hover
+			text-decoration: underline
+	.board__control--item
+		padding-right: .5rem
+		padding-left: .5rem
+		.card
+			border-radius: 5px
+			border-top-right-radius: 20px
+			overflow: hidden
+			&--grey
+				box-shadow: inset 0 0 0 1px $grey
+			&--blue
+				box-shadow: inset 0 0 0 1px $blue
+			&--green
+				box-shadow: inset 0 0 0 1px $green
+			.card__header
+				display: flex
+				align-items: center
+				justify-content: space-between
+				padding: 1rem 1.5rem
+				&--grey
+					background: $grey
+				&--blue
+					background: $blue
+				&--green
+					background: $green
+				.card__title
+					h2
+						margin-bottom: 0
+						color: #ffffff
+						font-size: 1.5rem
+				.card__refresh
+					button
+						border: none
+						background: none
+						color: #ffffff
+						font-size: 1.3rem
+						&:focus
+							outline: none
+							cursor: pointer
+			.card__body
+				padding: .6rem
+				.block__item
+					padding: .3rem 3.5rem .3rem 5rem
+					position: relative
+					cursor: move
+					border-radius: 3px
+					overflow: hidden
+					box-shadow: 0 0 0 1px #eeeeee
+					margin-bottom: .7rem
+					.block__line
+						position: absolute
+						top: 0
+						left: 0
+						width: rem(5px)
+						height: 100%
+						background: $red
+					.block__content
+						display: flex
+						justify-content: space-between
+						align-items: center
+						margin-bottom: .5rem
+						.block__note
+							a
+								display: block
+								margin-bottom: .5rem
+							h3
+								font-size: 1.2rem
+								text-transform: uppercase
+								font-weight: 600
+								margin-bottom: 0
+								span
+									font-weight: 400
+									text-transform: lowercase
+							.block__des
+								color: #bdbdbd
+						.block__action
+							.block__file
+								display: none
+								a
+									&:after
+										content: '\f216'
+										font-family: 'Material Design Icons'
+										display: inline-block
+										margin-left: .5rem
+										font-size: 1rem
+										line-height: 1rem
+							.block__btn
+								&--collapse
+									display: flex
+									justify-content: flex-end
+									margin-top: .4rem
+									button
+										background: #ffffff
+										border: none
+										border-radius: 5px
+										font-size: 1.1rem
+										line-height: 1.1rem
+										width: rem(28px)
+										height: 28px
+										padding: 0
+										text-align: center
+										box-shadow: 0 0 0 1px rgb(216, 216, 216)
+										cursor: pointer
+										&:focus
+											outline: none
+								&--moveTask
+									position: absolute
+									top: 0
+									right: 0
+									height: 100%
+									background: #eeeeee
+									button
+										border: none
+										background: none
+										height: 100%
+										cursor: pointer
+										font-size: 1.2rem
+										&:focus
+											outline: none
+						&:before
+							content: 'L'
+							height: 3rem
+							width: 3rem
+							line-height: 3rem
+							text-align: center
+							border-radius: 50%
+							text-align: center
+							display: block
+							position: absolute
+							top: auto
+							left: 0
+							// transform: translateY(-50%)
+							background: red
+							margin-left: 1.5rem
+							font-weight: 600
+							font-size: 1.5rem
+						&--hasfile
+							.block__action
+								.block__file
+									display: block
+					.block__collapse
+						// display: none
+						// height: 0
+						max-height: 0
+						overflow: hidden
+						transition: max-height 1s ease-in-out
+						.block__detail , .block__create
+							hr
+								margin: .5rem 0
+							span , a
+								color: #333333
+								font-size: .9rem
+							i.mdi
+								margin-right: .4rem
+						&--show
+							max-height: 10rem
+							// height: auto
+					&:last-child
+						margin-bottom: 0
+					&--low
+						.block__line
+							background: $low-lighten
+						.block__content
+							&:before
+								background: $low-lighten
+								color: $low
+								content: 'L'
+							.block__title
+								h3
+									color: $low
+						.block__action
+							.block__file
+								a
+									color: $low
+					&--normal
+						.block__line
+							background: $nor-lighten
+						.block__content
+							&:before
+								background: $nor-lighten
+								color: $nor
+								content: 'N'
+							.block__title
+								h3
+									color: $nor
+						.block__action
+							.block__file
+								a
+									color: $nor
+					&--medium
+						.block__line
+							background: $medi-lighten
+						.block__content
+							&:before
+								background: $medi-lighten
+								color: $medi
+								content: 'M'
+							.block__title
+								h3
+									color: $medi
+						.block__action
+							.block__file
+								a
+									color: $medi
+					&--danger
+						.block__line
+							background: $danger-lighten
+						.block__content
+							&:before
+								background: $danger-lighten
+								color: $danger
+								content: 'D'
+							.block__title
+								h3
+									color: $danger
+						.block__action
+							.block__file
+								a
+									color: $danger
+					

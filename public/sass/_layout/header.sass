@@ -1,0 +1,36 @@
+.sangsang-header
+	.navbar
+		.navbar-brand
+			color: #ffffff
+		.navbar-toggler
+			span
+				color: #ffffff
+		.navbar-collapse
+			.navbar-nav
+				.nav-item
+					.nav-link
+						color: #ffffff
+			.form-inline
+				margin: 0 5px 1px 8px
+				position: relative
+				&:before
+					content: ''
+					display: block
+					height: 1px
+					width: 100%
+
+				input
+					border-bottom: 1px solid #ffffff
+					margin: 0
+					+mq(down-md)
+						margin-left: 0
+					+placeholder()
+						color: #ffffff
+					&:focus
+						box-shadow: none
+	+mq(lg)
+		.navbar
+			.navbar-collapse
+				.collapse-wrap
+					display: flex
+					align-items: center
