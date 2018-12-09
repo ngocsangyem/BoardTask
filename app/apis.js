@@ -6,7 +6,22 @@ var fs = require('fs');
 
 router.get('/', (req, res, next) => {
 	res.json({
-		title: 'Khoai To'
+		title: 'Sang Sang'
+	});
+});
+router.get('/users', (req, res, next) => {
+	res.json({
+		title: 'Users'
+	});
+});
+router.get('/archivetask', (req, res, next) => {
+	res.json({
+		title: 'archivetask'
+	});
+});
+router.get('/settings', (req, res, next) => {
+	res.json({
+		title: 'settings'
 	});
 });
 

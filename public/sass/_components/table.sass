@@ -1,0 +1,40 @@
+.table
+	position: relative
+	border: 1px solid rgba(0,0,0,.12)
+	border-collapse: collapse
+	white-space: nowrap
+	background-color: #fff
+	box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2)
+	thead
+		tr
+			th
+				border: none
+				position: relative
+				vertical-align: bottom
+				text-overflow: ellipsis
+				+fz(rem(19px))
+				line-height: rem(24px)
+				letter-spacing: 0
+				height: rem(48px)
+				color: rgba(0,0,0,.54)
+				padding-bottom: 8px
+	tbody
+		tr
+			th , td
+				border: none
+				position: relative
+				vertical-align: top
+				+fz(1.1rem)
+				height: rem(48px)
+				line-height: rem(34px)
+				border-top: 1px solid rgba(0,0,0,.12)
+				border-bottom: 1px solid rgba(0,0,0,.12)
+				// padding: rem(12px) rem(18px) 0
+				padding-bottom: rem(12px)
+				a
+					&:hover
+						text-decoration: underline
+					&.btn
+						background: #ffcc80
+						color: #ffffff
+						text-decoration: none

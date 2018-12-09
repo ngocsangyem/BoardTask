@@ -1,0 +1,65 @@
+extends _layout/layout
+
+block content
+	section.board__users
+		article
+			.container
+				.row.mb-4
+					.col
+						h1 Thành viên
+					.col-auto
+						a.board__btn.btn.btn-warning(href="") Thêm mới
+				.row.user__lists
+					.col
+						table.table
+							thead
+								tr
+									th(scope='col') #
+									th(scope='col') Họ và tên
+									th(scope='col') Email
+									th(scope='col') User name
+									th(scope='col') Edit
+							tbody
+								tr
+									th(scope='row') 1
+									td
+										a(href="#", title="title") Ngọc Sang
+									td nnsang24@gmail.com
+									td @mdo
+									td
+										a.btn(href="") Sửa
+								tr
+									th(scope='row') 1
+									td
+										a(href="#", title="title") Ngọc Sang
+									td nnsang24@gmail.com
+									td @mdo
+									td
+										a.btn(href="") Sửa
+								tr
+									th(scope='row') 1
+									td
+										a(href="#", title="title") Ngọc Sang
+									td nnsang24@gmail.com
+									td @mdo
+									td
+										a.btn(href="") Sửa
+				.row.pagination__lists.justify-content-center.mt-3
+					nav(aria-label='Page navigation example')
+						ul.pagination.pg-blue
+							li.page-item
+								a.page-link(aria-label='Previous')
+									span(aria-hidden='true') «
+									span.sr-only Previous
+							li.page-item
+								a.page-link 1
+							li.page-item
+								a.page-link 2
+							li.page-item
+								a.page-link 3
+							li.page-item
+								a.page-link(aria-label='Next')
+									span(aria-hidden='true') »
+									span.sr-only Next
+
+

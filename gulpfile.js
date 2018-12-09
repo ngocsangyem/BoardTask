@@ -68,6 +68,8 @@ gulp.task('concatCss', () => {
 gulp.task('watch', () => {
 	let plugins = JSON.parse(fs.readFileSync('./plugins.json'));
 	gulp.watch('./public/sass/**/*.sass', ['sass']);
+	gulp.watch('./app/views/**/*.pug', ['sass']);
+	gulp.watch('./app/views/*.pug', ['sass']);
 	gulp.watch('./public/sass/*.sass', ['sass']);
 	gulp.watch('./scripts/**/*.js', ['scripts']);
 	gulp.watch('./scripts/*.js', ['scripts']);

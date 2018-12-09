@@ -81,7 +81,9 @@ docReady(function () {
 	// Tooltips Initialization
 	toolTopInstall();
 	// Collapse Task Board
-	collapseTaskBoard();
+	// collapseTaskBoard();
+	// Wave efect
+	Waves.attach('.card__header', ['waves-light']);
 });
 
 

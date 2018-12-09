@@ -7,7 +7,7 @@ router.get('/', (req, res, next) => {
 	const name = Utils.randomString(5);
 	console.log(name);
 
-	res.render('index', { title: name });
+	res.render('archivetask', { title: name });
 });
 
 module.exports = router;

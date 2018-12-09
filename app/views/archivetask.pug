@@ -1,0 +1,57 @@
+extends _layout/layout
+
+block content
+	section.board__archivetask
+		article
+			.container
+				.row.mb-4
+					.col
+						h1 Lưu trữ
+				.row.user__lists
+					.col
+						table.table
+							thead
+								tr
+									th(scope='col') #
+									th(scope='col') Tên nhiệm vụ
+									th(scope='col') Nội dung
+									th(scope='col') Ngày tạo
+							tbody
+								tr
+									th(scope='row') 1
+									td
+										a(href="#", title="title") CKDB-H1
+									td Chế tạo súng
+									td 24/08/2018
+								tr
+									th(scope='row') 1
+									td
+										a(href="#", title="title") CKDB-H1
+									td Chế tạo súng
+									td 24/08/2018
+								tr
+									th(scope='row') 1
+									td
+										a(href="#", title="title") CKDB-H1
+									td Chế tạo súng
+									td 24/08/2018
+								
+				.row.pagination__lists.justify-content-center.mt-3
+					nav(aria-label='Page navigation example')
+						ul.pagination.pg-blue
+							li.page-item
+								a.page-link(aria-label='Previous')
+									span(aria-hidden='true') «
+									span.sr-only Previous
+							li.page-item
+								a.page-link 1
+							li.page-item
+								a.page-link 2
+							li.page-item
+								a.page-link 3
+							li.page-item
+								a.page-link(aria-label='Next')
+									span(aria-hidden='true') »
+									span.sr-only Next
+
+
