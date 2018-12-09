@@ -2,56 +2,48 @@ let indexApp = {
 	toolTips: () => {
 		$('[data-toggle="tooltip"]').tooltip()
 	},
-	listId: [{
+	listIdShortTable: [{
 		taskTask: {
 			group: {
 				name: 'sang',
-				put: false,
+				// put: false,
 			},
-			chosenClass: 'sortable-chosen'
+			chosenClass: 'sortable-chosen',
+			animation: 500,
+			ghostClass: 'sortable-ghost',
+			chosenClass: 'sortable-chosen',
+			onStart: () => {
+				console.log('Start drag');
+			},
+			onEnd: () => {
+				console.log('End Drag');
+			}
+			// handle: '.my-handle',
+			// filter: '.block__item--normal'
 		},
 		taskProgress: {
 			group: {
 				name: 'sang'
-			}
+			},
+			animation: 500,
 		},
 		taskFinish: {
 			group: {
 				name: 'sang',
-				pull: false
-			}
-		}
-	},
-	{
-		taskTask2: {
-			group: {
-				name: 'sang',
-				put: false,
+				// pull: false
 			},
-			chosenClass: 'sortable-chosen'
-		},
-		taskProgress3: {
-			group: {
-				name: 'sang'
-			}
-		},
-		taskFinish4: {
-			group: {
-				name: 'sang',
-				pull: false
-			}
+			animation: 500,
 		}
 	}],
 	shortTable: (id, opt) => {
 		let el = document.getElementById(id)
 		let sortable = new Sortable(el, opt)
 	},
-	init: function () {
-		for (let index = 0; index < indexApp.listId.length; index++) {
-			console.log(indexApp.listId.length);
-			for (let key in indexApp.listId[index]) {
-				console.log(indexApp.listId[0][key]);
-				// indexApp.shortTable(key , indexApp.listId[0][key])
+	initShortTable: () => {
+		for (let index = 0; index < indexApp.listIdShortTable.length; index++) {
+			for (let key in indexApp.listIdShortTable[index]) {
+				console.log(indexApp.listIdShortTable[index][key]);
+				indexApp.shortTable(key , indexApp.listIdShortTable[index][key])
 			}
 		}
 
@@ -63,7 +55,7 @@ let indexApp = {
 
 
 
-indexApp.init();
+indexApp.initShortTable();
 
 
 (function (funcName, baseObj) {
@@ -148,73 +140,6 @@ indexApp.init();
 
 
 
-docReady(function () {
-	console.log('oke');
-	// Tooltips Initialization
-	toolTopInstall();
-	// Collapse Task Board
-	// collapseTaskBoard();
-	// Wave efect
-	Waves.attach('.card__header', ['waves-light']);
-	// Short Table
-	// shortTableJs()
-});
-
-
-
-
-function collapseTaskBoard() {
-	let btnCollapse = document.querySelector('.block__btn--collapse button')
-	let boardCollapses = document.getElementsByClassName('block__collapse')
-	let state = 0
-	boardCollapses.forEach(btnCollapse => {
-		btnCollapse.onclick = function () {
-			boardCollapse.classList.toggle('block__collapse--show')
-			console.log(boardCollapse.offsetParent);
-
-		}
-	});
-
-}
-
-function toolTopInstall() {
-	$('[data-toggle="tooltip"]').tooltip()
-}
-
-function shortTableJs() {
-	let el = document.getElementById('taskTask')
-	let el2 = document.getElementById('taskProgress')
-	let el3 = document.getElementById('taskFinish')
-
-	let sortable = new Sortable(el, {
-		group: {
-			name: 'sang',
-			pull: true,
-			put: false
-		},
-		chosenClass: 'sortable-chosen',
-		sort: true,
-		// delay: 3000,
-		// touchStartThreshold: 2
-	})
-	let sortable2 = new Sortable(el2, {
-		group: {
-			name: 'sang',
-			pull: true
-		},
-		chosenClass: 'sortable-chosen',
-		sort: true
-	})
-	let sortable3 = new Sortable(el3, {
-		group: {
-			name: 'sang',
-			pull: false
-		},
-		chosenClass: 'sortable-chosen',
-		sort: true
-	})
-
-}
 
 
 
