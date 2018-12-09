@@ -1,3 +1,44 @@
 .board__btn
 	border-radius: 3px
 	border-top-right-radius: 20px
+.btn__switch
+	label
+		font-size: 1.5rem
+		position: relative
+		span
+			display: inline-block
+			margin-left: 5rem
+			&.switch__off
+				display: none
+		&:after , &:before
+			content: ''
+			position: absolute
+			display: block
+			top: 50%
+			transform: translateY(-50%)
+			transition: all .4s ease-in-out
+		&:before
+			width: rem(30px)
+			height: rem(30px)
+			background: $low-lighten
+			z-index: 1
+			border-radius: 50%
+		&:after
+			height: rem(20px)
+			width: rem(60px)
+			background: $main
+			border-radius: 20px
+	input[type="checkbox"]
+		display: none
+		&:checked
+			+ label
+				&:before
+					transform: translate(100% , -50%)
+					background: $main
+				&:after
+					background: $low-lighten
+				span
+					&.switch__on
+						display: none
+					&.switch__off
+						display: inline-block

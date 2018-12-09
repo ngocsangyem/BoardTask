@@ -43,6 +43,13 @@ gulp.task('concatJs', () => {
 	let plugins = JSON.parse(fs.readFileSync('./plugins.json'));
 	return gulp.src(plugins.scripts)
 		.pipe(uglify())
+		.pipe(concat('plugins.min.js'))
+		.pipe(gulp.dest('./public/js'))
+})
+gulp.task('concatJsCore', () => {
+	let plugins = JSON.parse(fs.readFileSync('./plugins.json'));
+	return gulp.src(plugins.coreJs)
+		.pipe(uglify())
 		.pipe(concat('core.min.js'))
 		.pipe(gulp.dest('./public/js'))
 })
@@ -62,7 +69,7 @@ gulp.task('concatCss', () => {
 			showError.apply(this, ['Sass compile error', err])
 		}))
 		.pipe(cssnano())
-		.pipe(concat('core.min.css'))
+		.pipe(concat('plugins.min.css'))
 		.pipe(gulp.dest('./public/css'))
 })
 gulp.task('watch', () => {
@@ -119,6 +126,7 @@ gulp.task('default', function (callback) {
 		'sass',
 		'scripts',
 		'concatCss',
+		'concatJsCore',
 		'concatJs',
 		'nodemon',
 		'watch',

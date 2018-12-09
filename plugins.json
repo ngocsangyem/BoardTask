@@ -13,5 +13,8 @@
 		"node_modules/mdbootstrap/js/popper.min.js",
 		"node_modules/mdbootstrap/js/bootstrap.min.js",
 		"node_modules/mdbootstrap/js/mdb.min.js"
+	],
+	"coreJs":[
+		"bower_components/Sortable/Sortable.min.js"
 	]
 }

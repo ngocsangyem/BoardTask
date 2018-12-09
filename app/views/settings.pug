@@ -1,3 +1,20 @@
 extends _layout/layout
 
 block content
+	section.board__settings
+		article
+			.container
+				.row.mb-4
+					.col
+						h1 Cài đặt
+				.row
+					.col-lg-6
+						.input-group.mb-3
+							.input-group-prepend
+								span#basic-addon1.input-group-text Hiển thị trên một trang
+							input.form-control(type='number', placeholder='0')
+						.btn__switch
+							input#Editor(type="checkbox", name="")
+							label(for="Editor")
+								span.switch__on Bật editor
+								span.switch__off Tắt editor
