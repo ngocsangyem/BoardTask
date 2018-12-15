@@ -1,0 +1,101 @@
+extends _layout/layout
+
+block content
+	section.board__addtask
+		.container
+			.row
+				.col-lg-8
+					.board__form
+						.card
+							.card__header.waves-light
+								.card__title
+									h2 Thêm nhiệm vụ
+							.card__body
+								form.c__form(autocomplete="off")
+									fieldset.md__field
+										input(type="text", name="first" required)
+										label(for="first") Tên nhiệm vụ
+										.line
+									fieldset
+										.row
+											.col-lg-6
+												.input-group.mb-3
+													.input-group-prepend
+														span.input-group-text Độ ưu tiên
+													select#state.custom-select(required="required")
+														option(value="") Low
+														option(value="") Normal
+														option(value="") Medium
+														option(value="") Danger
+												.input-group.mb-3
+													.input-group-prepend
+														span.input-group-text Tạo bởi
+													input#creatBy.form-control(type='text', placeholder='....')
+												.input-group.mb-3
+													.input-group-prepend
+													input#date.form-control(type='text', placeholder='Ngày có hiệu lực')
+												.input-group.mb-3
+													.input-group-prepend
+													input#material.form-control(type='text', placeholder='Chất liệu')
+											.col-lg-6
+												.input-group.mb-3
+													.input-group-prepend
+														span.input-group-text Chọn file
+													input.form-control#file(type='file', placeholder='....')
+												.input-group.mb-3
+													.input-group-prepend
+														span.input-group-text Người nhận
+													input#receive.form-control(type='text', placeholder='....')
+												.input-group.mb-3
+													.input-group-prepend
+													input#dates.form-control(type='text', placeholder='Dự kiến')
+												.input-group.mb-3
+													.input-group-prepend
+													input#nameProject.form-control(type='text', placeholder='Tên dự án')
+				.col-lg-4
+					h3.mb-4 Xem trước
+					.block__item.block__item--normal
+						.block__line
+						.block__content.block__content--hasfile
+							.block__note
+								.block__title
+									a(href="#")
+										h3 K-DB-5: 
+											span Oke
+								.block__des Lorem
+							.block__action
+								.block__file
+									a(href="#") Xem file
+								.block__btn--collapse
+									button(type="button")
+										i.mdi.mdi-chevron-down
+								.block__btn--moveTask
+									button(type="button")
+										i.mdi.mdi-chevron-right
+						.block__collapse
+							.block__detail
+								hr
+								.row
+									.col
+										i.mdi.mdi-briefcase
+										| Chua xac dinh
+									.col-auto
+										span 3h
+									.col-auto
+										span Chua xac dinh
+								hr  
+							.block__create
+								.row
+									.col
+										i.mdi.mdi-account
+										a(href="#") Ngoc Sang
+									.col-auto
+										span.creat__day 6 months ago
+								hr
+								.row
+									.col
+										i.mdi.mdi-pen
+										a(href="#") Anh dao
+									.col-auto
+										span.creat__day 6 months ago
+

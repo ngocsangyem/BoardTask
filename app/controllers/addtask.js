@@ -5,9 +5,9 @@ const Utils = require('../helpers/utils');
 
 router.get('/', (req, res, next) => {
 	const name = Utils.randomString(5);
-	// console.log(name);
+	console.log(name);
 
-	res.render('index', { title: name });
+	res.render('addtask', { title: name });
 });
 
 module.exports = router;

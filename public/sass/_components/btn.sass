@@ -1,6 +1,7 @@
 .board__btn
 	border-radius: 3px
 	border-top-right-radius: 20px
+
 .btn__switch
 	label
 		font-size: 1.5rem
@@ -20,15 +21,16 @@
 		&:before
 			width: rem(30px)
 			height: rem(30px)
-			background: $low-lighten
+			background: #ffffff
 			z-index: 1
 			border-radius: 50%
+			box-shadow: 0 0 10px 0 rgba(0,0,0,.5)
 		&:after
 			height: rem(20px)
 			width: rem(60px)
 			background: $main
 			border-radius: 20px
-	input[type="checkbox"]
+	#Editor , #oneWay
 		display: none
 		&:checked
 			+ label

@@ -7,9 +7,11 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const debug = require('debug')('NGUYENXINHDEP:App');
-
+const fs = require('fs')
 // config
 const config = require('./config/config');
+let productjson = JSON.parse(fs.readFileSync('./db/products.json'))
+console.log(productjson);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app/views'));

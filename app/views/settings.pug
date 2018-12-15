@@ -18,3 +18,16 @@ block content
 							label(for="Editor")
 								span.switch__on Bật editor
 								span.switch__off Tắt editor
+					.col-lg-6
+						.input-group.mb-3
+							.input-group-prepend
+								span#basic-addon1.input-group-text Số nhiệm vụ được kéo thả tối đa
+							input.form-control(type='number', placeholder='0')
+						.input-group.mb-3
+							.input-group-prepend
+								span#basic-addon1.input-group-text Số nhiệm đang thực hiện tối đa
+							input.form-control(type='number', placeholder='0')
+						.btn__switch
+							input#oneWay(type="checkbox", name="")
+							label(for="oneWay")
+								span Chỉ cho kéo một chiều

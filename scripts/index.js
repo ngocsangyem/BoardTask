@@ -1,8 +1,10 @@
+var data = {
+	status: 'danger'
+}
+
+
 let indexApp = {
-	toolTips: () => {
-		$('[data-toggle="tooltip"]').tooltip()
-	},
-	listIdShortTable: [{
+	listIdShortTable: {
 		taskTask: {
 			group: {
 				name: 'sang',
@@ -34,17 +36,68 @@ let indexApp = {
 			},
 			animation: 500,
 		}
-	}],
+	},
+	templates: (e) => {
+		return `<div class="block__item block__item--${data.status}">
+		<div class="block__line"></div>
+		<div class="block__content block__content--hasfile">
+			<div class="block__note">
+				<div class="block__title"><a href="#">
+						<h3>K-DB-5: <span>Oke</span></h3>
+					</a></div>
+				<div class="block__des">Lorem</div>
+			</div>
+			<div class="block__action">
+				<div class="block__file"><a href="#">Xem file</a></div>
+				<div class="block__btn--collapse"><button type="button"><i class="mdi mdi-chevron-down"></i></button></div>
+				<div class="block__btn--moveTask"><button type="button"><i class="mdi mdi-chevron-right"></i></button></div>
+			</div>
+		</div>
+		<div class="block__collapse">
+			<div class="block__detail">
+				<hr>
+				<div class="row">
+					<div class="col"><i class="mdi mdi-briefcase"></i>Chua xac dinh</div>
+					<div class="col-auto"><span>3h</span></div>
+					<div class="col-auto"><span>Chua xac dinh</span></div>
+				</div>
+				<hr>
+			</div>
+			<div class="block__create">
+				<div class="row">
+					<div class="col"><i class="mdi mdi-account"></i><a href="#">Ngoc Sang</a></div>
+					<div class="col-auto"><span class="creat__day">6 months ago</span></div>
+				</div>
+				<hr>
+				<div class="row">
+					<div class="col"><i class="mdi mdi-pen"></i><a href="#">Anh dao</a></div>
+					<div class="col-auto"><span class="creat__day">6 months ago</span></div>
+				</div>
+			</div>
+		</div>
+	</div>`
+	}
+	,
+	creatLists: () => {
+		let tmp = []
+		for (let key in data) {
+			if (data.hasOwnProperty(key)) {
+				let element = data[key];
+				tmp.push(indexApp.templates(element))
+			}
+		}
+		return tmp;
+	},
 	shortTable: (id, opt) => {
 		let el = document.getElementById(id)
 		let sortable = new Sortable(el, opt)
 	},
 	initShortTable: () => {
-		for (let index = 0; index < indexApp.listIdShortTable.length; index++) {
-			for (let key in indexApp.listIdShortTable[index]) {
-				console.log(indexApp.listIdShortTable[index][key]);
-				indexApp.shortTable(key , indexApp.listIdShortTable[index][key])
-			}
+		for (let key in indexApp.listIdShortTable) {
+			indexApp.shortTable(key, indexApp.listIdShortTable[key])
+			let el = document.getElementById(key)
+			el.innerHTML += indexApp.creatLists()
+			// console.log(el);
 		}
 
 	}
@@ -58,83 +111,7 @@ let indexApp = {
 indexApp.initShortTable();
 
 
-(function (funcName, baseObj) {
-	// The public function name defaults to window.docReady
-	// but you can pass in your own object and own function name and those will be used
-	// if you want to put them in a different namespace
-	funcName = funcName || "docReady";
-	baseObj = baseObj || window;
-	var readyList = [];
-	var readyFired = false;
-	var readyEventHandlersInstalled = false;
 
-	// call this when the document is ready
-	// this function protects itself against being called more than once
-	function ready() {
-		if (!readyFired) {
-			// this must be set to true before we start calling callbacks
-			readyFired = true;
-			for (var i = 0; i < readyList.length; i++) {
-				// if a callback here happens to add new ready handlers,
-				// the docReady() function will see that it already fired
-				// and will schedule the callback to run right after
-				// this event loop finishes so all handlers will still execute
-				// in order and no new ones will be added to the readyList
-				// while we are processing the list
-				readyList[i].fn.call(window, readyList[i].ctx);
-			}
-			// allow any closures held by these functions to free
-			readyList = [];
-		}
-	}
-
-	function readyStateChange() {
-		if (document.readyState === "complete") {
-			ready();
-		}
-	}
-
-	// This is the one public interface
-	// docReady(fn, context);
-	// the context argument is optional - if present, it will be passed
-	// as an argument to the callback
-	baseObj[funcName] = function (callback, context) {
-		if (typeof callback !== "function") {
-			throw new TypeError("callback for docReady(fn) must be a function");
-		}
-		// if ready has already fired, then just schedule the callback
-		// to fire asynchronously, but right away
-		if (readyFired) {
-			setTimeout(function () {
-				callback(context);
-			}, 1);
-			return;
-		} else {
-			// add the function and context to the list
-			readyList.push({
-				fn: callback,
-				ctx: context
-			});
-		}
-		// if document already ready to go, schedule the ready function to run
-		if (document.readyState === "complete") {
-			setTimeout(ready, 1);
-		} else if (!readyEventHandlersInstalled) {
-			// otherwise if we don't have event handlers installed, install them
-			if (document.addEventListener) {
-				// first choice is DOMContentLoaded event
-				document.addEventListener("DOMContentLoaded", ready, false);
-				// backup is window load event
-				window.addEventListener("load", ready, false);
-			} else {
-				// must be IE
-				document.attachEvent("onreadystatechange", readyStateChange);
-				window.attachEvent("onload", ready);
-			}
-			readyEventHandlersInstalled = true;
-		}
-	}
-})("docReady", window);
 
 
 

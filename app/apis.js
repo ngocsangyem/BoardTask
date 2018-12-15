@@ -24,6 +24,16 @@ router.get('/settings', (req, res, next) => {
 		title: 'settings'
 	});
 });
+router.get('/addtask', (req, res, next) => {
+	res.json({
+		title: 'addtask'
+	});
+});
+router.get('/login', (req, res, next) => {
+	res.json({
+		title: 'login'
+	});
+});
 
 router.get('/products', (req, res, next) => {
 	var obj;
