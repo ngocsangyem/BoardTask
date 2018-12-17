@@ -1,0 +1,18 @@
+[
+	{
+		"TaskType": "K-DB-1",
+		"TaskId": "f0258b668-5684c1-13bad9-4d91b8fa02a",
+		"TaskName": "Oke",
+		"Description": "Lorem",
+		"CreatedDate": "2018-06-15 23:35",
+		"File": "7e84d94336911bb9ebeeba1b66125882.pdf",
+		"CreateID": 1,
+		"workID": 2,
+		"order": 4,
+		"State": "N",
+		"ActivatedTS": "2018-06-15 23:35",
+		"Project": "ABC",
+		"Material": "",
+		"Est": "5h"
+	}
+]
