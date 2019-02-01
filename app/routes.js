@@ -16,6 +16,11 @@ module.exports = function (app) {
 	app.use('/login', require('./controllers/login'));
 	// Trang check
 	app.use('/check', require('./controllers/check'));
+	// Trang check
+	app.use('/database', require('./controllers/database'));
+	// Trang check
+	app.use('/adduser', require('./controllers/adduser'));
+	app.use('/userreg', require('./controllers/userreg'));
 	// Trang DS SP
 	app.use('/products', require('./controllers/products'));
 	// Trang SP Chi tiết

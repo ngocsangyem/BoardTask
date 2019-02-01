@@ -34,6 +34,16 @@ router.get('/login', (req, res, next) => {
 		title: 'login'
 	});
 });
+router.get('/database', (req, res, next) => {
+	res.json({
+		title: 'database'
+	});
+});
+router.get('/adduser', (req, res, next) => {
+	res.json({
+		title: 'adduser'
+	});
+});
 
 router.get('/products', (req, res, next) => {
 	var obj;

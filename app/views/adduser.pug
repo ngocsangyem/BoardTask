@@ -1,0 +1,22 @@
+extends _layout/layout
+
+block content
+	.container
+		form(action="/userreg" method="POST" enctype="multipart/form-data")
+			.input-group.mb-3
+				//- .input-group-prepend
+				//- 	span.input-group-text id
+				//- input.form-control(type='text', placeholder='Id', name="id")
+			.input-group.mb-3
+				.input-group-prepend
+					span.input-group-text name
+				input.form-control(type='text', placeholder='Username', name="username")
+			.input-group.mb-3
+				.input-group-prepend
+					span.input-group-text password
+				input.form-control(type='password', placeholder='Password', name="password")
+			.input-group.mb-3
+				.input-group-prepend
+					span.input-group-text avatar
+				input.form-control(type='file', placeholder='Choose your file', name="file" multiple)
+			button.btn.btn-primary(type="submit") add

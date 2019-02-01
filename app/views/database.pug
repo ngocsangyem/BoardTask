@@ -1,0 +1,20 @@
+extends _layout/layout
+
+block content
+	.container
+		.row
+			.col
+				h1.mt-4 #{title}
+				table.table.table-bordered
+					thead
+						tr 
+							th ID
+							th Name
+							th Password
+					tbody
+						- for(var user in data)
+							tr 
+								td #{data[user].id}
+								td #{data[user].name}
+								td #{data[user].password}
+								td #{data[user].image}
